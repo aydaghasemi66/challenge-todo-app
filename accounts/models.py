@@ -5,11 +5,6 @@ from django.contrib.auth.models import AbstractUser, AbstractBaseUser,BaseUserMa
 
 
 
-# class CustomeUser(AbstractUser):
-#     id_code = models.CharField(max_length=10,null=True, blank=True)
-#     mobile = models.CharField(max_length=20,null=True, blank=True)
-#     image = models.ImageField(upload_to='users', default='user.jpg')
-
 class CustomeBaseUserManager(BaseUserManager):
     def create_user(self, email, password, **extra_fields):
         if not email:
